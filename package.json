@@ -1,0 +1,39 @@
+{
+  "name": "cpblizzard",
+  "version": "v1.0.0",
+  "description": "Club Penguin Blizzard Desktop Client",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build-win32": "electron-builder build --win --ia32 --publish never",
+    "build-win64": "electron-builder build --win --ia32 --publish never --x64",
+    "build-mac": "electron-builder build --mac zip --x64 --publish never",
+    "build-linux": "electron-builder build --linux --ia32 --publish never --x64",
+    "appveyor-build": "electron-builder build --win --publish onTagOrDraft"
+  },
+  "homepage": "https://blizzardcp.pw",
+  "repository": "https://github.com/CPBlizzard/Desktop",
+  "author": "RaySollium99",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^11.3.0",
+    "electron-builder": "^22.2.0",
+    "electron-is-dev": "^1.1.0"
+  },
+  "dependencies": {
+    "electron-is-dev": "^1.1.0"
+  },
+  "build": {
+    "appId": "pw.blizzardcp.client",
+    "productName": "Club Penguin Blizzard",
+    "asar": "false",
+    "win": {
+      "publish": "github"
+    },
+    "linux": {
+      "publish": "github",
+      "target": "appImage",
+      "category": "Games"
+    }
+  }
+}
